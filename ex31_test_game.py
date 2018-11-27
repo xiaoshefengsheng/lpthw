@@ -16,6 +16,11 @@ if eat == "noodles":
 
 elif eat == "rice":
 	print("Let's have braised chicken rice.")
+	wait_people = int(input("how many people are waiting? > "))
+	if wait_people > 10:
+		print("Don't want to wait. Choose again.")
+	else:
+		print("Wait a minute.It's right here.")
 
 elif eat == "dumplings":
 	print("我们去小恒水饺店吧.")
