@@ -1,4 +1,4 @@
-print("How old are you?", end=' ')  #打印提示，end' '为输出空格
+print("How old are you?", end=' ')  #打印提示，end' '为输出空格,默认为换行
 age = input()                       #input为支持用户输入函数
 print("How tall are you?", end=' ') 
 height = input()
