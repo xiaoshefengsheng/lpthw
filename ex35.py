@@ -22,19 +22,19 @@ def bear_room():
 	print("the fat bear is in front of another door.")
 	print("how are you going to move the bear?")
 	bear_moved = False    #赋值变量bear_moved初始False即不移动
-	#执行while循环
+	#执行while True无限循环，利用里面调用的函数结束循环
 	while True:
 		choice = input("> ")  #输入要进行的操作
 		
 		if choice == "take honey":   #if 移动蜂蜜 take honey 
 			dead("the bear looks at you then slaps your face off")  #dead，失败
-		elif choice == "taunt bear" and not bear_moved:  #嘲弄熊,并赋值bear_moved为True
+#嘲弄熊,并在第一次循环时赋值bear_moved为True，而后面的循环因为这个elif条件为假就不执行了
+		elif choice == "taunt bear" and not bear_moved:  
 			print("the bear has moved from the door")
-			print(type(choice))
 			print(bear_moved, "you can go through it now")
 			bear_moved = True
 		elif choice == "taunt bear" and bear_moved:  #再次输入taunt bear就会失败dead
-			print(bear_moved)
+			print(bear_moved)  #调试语句，查看下当前的bear_moved值
 			dead("the bear gets pissed off and chews your leg off.")
 		elif choice == "open door" and bear_moved:  #输入open door，调用gold_room函数
 			gold_room()
@@ -55,7 +55,7 @@ def cthulhu_room():
 		dead("well that was tasty!")
 	else:
 		cthulhu_room()
-#定义dead失败函数，输出dead引入的参数即失败原因，并退出。		
+#定义dead失败函数，输出dead引入的参数即失败原因，并exit退出。		
 def dead(why):
 	print(why, "good job!")
 	exit(0)
@@ -75,5 +75,4 @@ def start():
 		dead("you stumble around the room until you starve.")
 #执行start()		
 start()
-
-			
+#本章代码较多，可以分割为小代码块，先确定骨架，再细化代码。 #即先确定所有函数，然后再给函数增加代码。
