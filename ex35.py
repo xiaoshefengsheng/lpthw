@@ -48,7 +48,7 @@ def cthulhu_room():
 	print("do you flee for your life or eat your head?")
 #输入选择的内容	
 	choice = input("> ")
-#输入flee逃命，则重新开始，输入head脑袋，则失败。 否则继续循环	
+#输入flee逃命，则重新开始，输入head脑袋，则失败。 否则再次执行函数	
 	if "flee" in choice:
 		start()
 	elif "head" in choice:
@@ -66,7 +66,7 @@ def start():
 	print("which one do you take?")
 #输入选择的内容	
 	choice = input("> ")
-#如果选择left,则去往有熊的房间。 选择right,则去往邪神的房间。 其他选择则失败。	
+#如果选择left,则去往有熊的房间。 选择right,则去往邪神的房间。 其他选择则提示在房间里晃晃悠悠，最后饿死失败。	
 	if choice == "left":
 		bear_room()
 	elif choice == "right":
